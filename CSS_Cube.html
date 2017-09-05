@@ -1,0 +1,61 @@
+
+<html>
+<head>
+<style>
+
+.scene {
+  width: 300px;
+  height: 300px;
+  margin: 275px auto 0;
+  perspective: 1200px;
+}
+
+.cube {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  animation: example 5s ease-in-out infinite;
+}
+
+.side {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  border: 5px solid black;
+  background-color: rgba(54, 80, 200, 0.7);
+}
+
+.back {
+  transform: translateZ(-150px);
+}
+.top {
+  transform: translateY(-150px) rotateX(90deg);
+}
+.bottom {
+  transform: translateY(150px) rotateX(90deg);
+}
+.front {
+  transform: translateZ(150px);
+}
+.top, .bottom {
+  background-color: rgba(105, 136, 190, 0.5)
+}
+
+@keyframes example {
+  100% { transform: rotateX(360deg); }
+}
+</style>
+    </head>
+    <body>
+<div class="scene">
+  <div class="cube">
+    <div class="side back"></div>
+    <div class="side top"></div>
+    <div class="side bottom"></div>
+    <div class="side front"></div>
+  </div>
+</div>
+    </body>
+    </html>
